@@ -16,6 +16,7 @@ import type { ConnectionDetails } from "./api/connection-details/route";
 import { NoAgentNotification } from "@/components/NoAgentNotification";
 import { CloseIcon } from "@/components/CloseIcon";
 import { useKrispNoiseFilter } from "@livekit/components-react/krisp";
+import { AgentVideoDisplay } from "@/components/AgentVideoDisplay";
 
 export default function Page() {
   const [connectionDetails, updateConnectionDetails] = useState<
@@ -58,13 +59,28 @@ export default function Page() {
         onDisconnected={() => {
           updateConnectionDetails(undefined);
         }}
-        className="grid grid-rows-[2fr_1fr] items-center"
+        className="grid grid-rows-[1fr_1fr] items-center relative p-4 max-h-[calc(100vh-2rem)]"
       >
-        <SimpleVoiceAssistant onStateChange={setAgentState} />
-        <ControlBar
-          onConnectButtonClicked={onConnectButtonClicked}
-          agentState={agentState}
-        />
+        <AnimatePresence>
+          {agentState !== "disconnected" && agentState !== "connecting" && (
+            <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.4, ease: [0.09, 1.04, 0.245, 1.055] }}
+            className="mx-auto w-full max-w-[1500px]"
+            >
+              <AgentVideoDisplay />
+            </motion.div>
+          )}
+        </AnimatePresence>
+          <SimpleVoiceAssistant onStateChange={setAgentState} />
+        <div className="absolute -bottom-14 w-full">
+          <ControlBar
+            onConnectButtonClicked={onConnectButtonClicked}
+            agentState={agentState}
+          />
+        </div>
         <RoomAudioRenderer />
         <NoAgentNotification state={agentState} />
       </LiveKitRoom>
