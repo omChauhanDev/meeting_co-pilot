@@ -1,7 +1,7 @@
 import FaqSection from "@/components/landingPage/FaqSection"
 import FeaturesSection from "@/components/landingPage/FeaturesSection"
 import HeroSection from "@/components/landingPage/HeroSection"
-import HowItWorks from "@/components/landingPage/howItWorks"
+import HowItWorks from "@/components/landingPage/HowItWorks"
 import PricingSection from "@/components/landingPage/PricingSection"
 import UseCases from "@/components/landingPage/UseCases"
 
