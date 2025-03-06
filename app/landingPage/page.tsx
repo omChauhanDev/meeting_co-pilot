@@ -1,6 +1,7 @@
 import FeaturesSection from "@/components/landingPage/FeaturesSection"
 import HeroSection from "@/components/landingPage/HeroSection"
 import HowItWorks from "@/components/landingPage/howItWorks"
+import PricingSection from "@/components/landingPage/PricingSection"
 import UseCases from "@/components/landingPage/UseCases"
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
         <FeaturesSection />
         <HowItWorks/>
         <UseCases/>
+        <PricingSection/>
       </div>
     </>
 
