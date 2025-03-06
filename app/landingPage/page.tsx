@@ -1,3 +1,4 @@
+import FaqSection from "@/components/landingPage/FaqSection"
 import FeaturesSection from "@/components/landingPage/FeaturesSection"
 import HeroSection from "@/components/landingPage/HeroSection"
 import HowItWorks from "@/components/landingPage/howItWorks"
@@ -13,6 +14,7 @@ export default function Home() {
         <HowItWorks/>
         <UseCases/>
         <PricingSection/>
+        <FaqSection/>
       </div>
     </>
 
