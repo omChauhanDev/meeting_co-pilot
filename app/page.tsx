@@ -75,12 +75,12 @@ export default function Page() {
           )}
         </AnimatePresence>
           <SimpleVoiceAssistant onStateChange={setAgentState} />
-        <div className="absolute -bottom-14 w-full">
-          <ControlBar
-            onConnectButtonClicked={onConnectButtonClicked}
-            agentState={agentState}
-          />
-        </div>
+          <div className="absolute -bottom-14 w-full">
+            <ControlBar
+              onConnectButtonClicked={onConnectButtonClicked}
+              agentState={agentState}
+            />
+          </div>
         <RoomAudioRenderer />
         <NoAgentNotification state={agentState} />
       </LiveKitRoom>
@@ -112,10 +112,6 @@ function ControlBar(props: {
   onConnectButtonClicked: () => void;
   agentState: AgentState;
 }) {
-  /**
-   * Use Krisp background noise reduction when available.
-   * Note: This is only available on Scale plan, see {@link https://livekit.io/pricing | LiveKit Pricing} for more details.
-   */
   const krisp = useKrispNoiseFilter();
   useEffect(() => {
     krisp.setNoiseFilterEnabled(true);

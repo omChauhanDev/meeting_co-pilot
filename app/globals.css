@@ -18,3 +18,202 @@
 .lk-disconnect-button {
   @apply h-[36px] hover:bg-[#6b221a] hover:text-[white] bg-[#31100c] border-[#6b221a];
 }
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 172 85% 32%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 263 70% 63%;
+    --accent-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 25% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222 47% 11%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 172 85% 32%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 263 70% 63%;
+    --accent-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --hint-of-blue: 210 50% 20%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Hero section styles */
+.perspective {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.ai-avatar-container {
+  transition: transform 0.5s ease-out;
+  transform-style: preserve-3d;
+}
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+  transition: transform 0.3s ease-out;
+  transform-style: preserve-3d;
+}
+
+.floating-element-delayed {
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 1s;
+  transition: transform 0.3s ease-out;
+  transform-style: preserve-3d;
+}
+
+.floating-element-reverse {
+  animation: float-reverse 7s ease-in-out infinite;
+  transition: transform 0.3s ease-out;
+  transform-style: preserve-3d;
+}
+
+.floating-element-slow {
+  animation: float 10s ease-in-out infinite;
+  animation-delay: 2s;
+  transition: transform 0.3s ease-out;
+  transform-style: preserve-3d;
+}
+
+.floating-element-fast {
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s ease-out;
+  transform-style: preserve-3d;
+}
+
+.floating-element-faster {
+  animation: float-reverse 3s ease-in-out infinite;
+  animation-delay: 1s;
+  transition: transform 0.3s ease-out;
+  transform-style: preserve-3d;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(15px) rotate(-2deg);
+  }
+}
+
+.particle-animation {
+  background-image: radial-gradient(circle, rgba(13, 148, 136, 0.1) 1px, transparent 1px),
+    radial-gradient(circle, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px, 30px 30px;
+  background-position: 0 0, 20px 20px;
+  animation: particle-drift 20s linear infinite;
+}
+
+@keyframes particle-drift {
+  0% {
+    background-position: 0 0, 20px 20px;
+  }
+  100% {
+    background-position: 40px 40px, 60px 60px;
+  }
+}
+
+.light-rays {
+  background: linear-gradient(45deg, transparent 0%, rgba(13, 148, 136, 0.1) 50%, transparent 100%);
+  background-size: 200% 200%;
+  animation: light-pulse 8s ease-in-out infinite;
+}
+
+@keyframes light-pulse {
+  0%,
+  100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #0f172a 0%, #0d9488 100%);
+}
+
+.particle-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.particle-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230D9488' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  z-index: -1;
+}
