@@ -6,7 +6,7 @@ import { ArrowRight, FileUp, Play } from "lucide-react"
 import Image from "next/image"
 import { useRouter } from 'next/navigation'
 import { Dialog, DialogContent, DialogTrigger, DialogClose } from "@/components/ui/dialog"
-import { UploadComponent } from "./UploadDoc"
+import { UploadDoc } from "./UploadDoc"
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -53,7 +53,7 @@ export default function HeroSection() {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-[600px]">
-              Let AI explain your documents and presentations to clients so you don't have to repeat yourself
+              Let Co-pilot explain your documents and presentations to clients so you don't have to repeat yourself
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -68,7 +68,7 @@ export default function HeroSection() {
                     <DialogClose asChild>
                     </DialogClose>
                   </div>
-                  <UploadComponent />
+                  <UploadDoc />
                 </DialogContent>
               </Dialog>
               <Button size="lg" variant="outline" className="group" onClick={handleSeeHowItWorksClick}>
@@ -92,7 +92,7 @@ export default function HeroSection() {
                 <div className="absolute inset-0 rounded-full blur-[40px] opacity-70" />
                 <Image
                   src="/agent_avatar.png"
-                  alt="AI Presenter Avatar"
+                  alt="Meeting Co-pilot Avatar"
                   width={220}
                   height={300}
                   className="relative z-10 object-contain"

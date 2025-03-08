@@ -8,7 +8,7 @@ import { FileUp, Check, File } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 
-function UploadComponent() {
+function UploadDoc() {
   const [isDragging, setIsDragging] = useState(false)
   const [file, setFile] = useState<File | null>(null)
   const [uploadProgress, setUploadProgress] = useState(0)
@@ -136,7 +136,7 @@ function UploadComponent() {
                   <div className="space-y-4">
                     <div className="flex items-center text-green-500 bg-green-50 dark:bg-green-950/30 p-3 rounded-md">
                       <Check className="h-5 w-5 mr-2" />
-                      <p>Upload complete! Your AI presenter is being trained.</p>
+                      <p>Upload complete! Your Meeting Co-pilot  is being trained.</p>
                     </div>
                     <div className="flex justify-between">
                       <Button variant="outline" onClick={resetUpload}>
@@ -155,5 +155,5 @@ function UploadComponent() {
   )
 }
 
-export { UploadComponent }
+export { UploadDoc }
 

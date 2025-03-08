@@ -17,7 +17,7 @@ export default function PricingSection() {
       description: "Perfect for individuals and small teams",
       priceMonthly: 29,
       priceAnnual: 24,
-      features: ["Up to 10 documents", "Basic AI presenter", "Standard Q&A capabilities", "Email support", "1 user"],
+      features: ["Up to 10 documents", "Basic Co-pilot", "Standard Q&A capabilities", "Email support", "1 user"],
       cta: "Get Started",
       popular: false,
     },
@@ -28,7 +28,7 @@ export default function PricingSection() {
       priceAnnual: 69,
       features: [
         "Up to 50 documents",
-        "Advanced AI presenter",
+        "Advanced Co-pilot",
         "Enhanced Q&A with context",
         "Priority support",
         "5 users",
@@ -45,7 +45,7 @@ export default function PricingSection() {
       priceAnnual: null,
       features: [
         "Unlimited documents",
-        "Premium AI presenter",
+        "Premium Co-pilot",
         "Advanced Q&A with learning",
         "24/7 dedicated support",
         "Unlimited users",

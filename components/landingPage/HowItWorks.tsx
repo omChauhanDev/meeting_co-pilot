@@ -11,8 +11,8 @@ export default function HowItWorks() {
     },
     {
       number: 2,
-      title: "Train",
-      description: "We train an AI agent on your specific document",
+      title: "Ingest",
+      description: "We ingest your specific document",
       icon: "/placeholder.svg?height=80&width=80",
     },
     {

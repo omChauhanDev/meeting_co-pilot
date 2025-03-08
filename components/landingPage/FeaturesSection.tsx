@@ -12,7 +12,7 @@ export default function FeaturesSection() {
       icon: <BarChart className="h-10 w-10 text-accent" />,
       title: "Visual References",
       description:
-        "AI shows relevant slides while explaining concepts, making complex information easier to understand.",
+        "Co-pilot shows relevant slides while explaining concepts, making complex information easier to understand.",
     },
     {
       icon: <Clock className="h-10 w-10 text-secondary" />,
