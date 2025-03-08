@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="mx-auto container flex items-center justify-between h-16 md:h-20">
         <Link href="/landingPage" className="flex items-center space-x-2">
           <span className="text-2xl font-bold bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
-            Presenter AI
+            Meeting Co-pilot
           </span>
         </Link>
 

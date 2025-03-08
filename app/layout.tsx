@@ -1,20 +1,21 @@
-import "@livekit/components-styles";
-import "./globals.css";
-import { Public_Sans } from "next/font/google";
+import type React from "react"
+import "@livekit/components-styles"
+import "./globals.css"
+import { Inter } from "next/font/google"
 
-const publicSans400 = Public_Sans({
-  weight: "400",
+const inter = Inter({
   subsets: ["latin"],
-});
+  weight: ["400", "500", "600"],
+})
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`h-full w-full ${publicSans400.className}`}>
+    <html lang="en" className={`h-full w-full ${inter.className}`}>
       <body className="h-full w-full">{children}</body>
     </html>
-  );
+  )
 }

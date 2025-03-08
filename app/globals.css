@@ -217,3 +217,126 @@
   opacity: 0.5;
   z-index: -1;
 }
+
+.premium-panel {
+  background-color: var(--primary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(224, 229, 236, 0.1);
+  transition: var(--transition);
+}
+
+.premium-panel-header {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--accent);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(224, 229, 236, 0.1);
+}
+
+.premium-button {
+  background-color: var(--primary);
+  color: var(--accent);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+  border: 1px solid rgba(224, 229, 236, 0.1);
+}
+
+.premium-button:hover {
+  background-color: var(--teal);
+  color: var(--secondary);
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-indicator::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-indicator.connected::before {
+  background-color: var(--success);
+}
+
+.status-indicator.disconnected::before {
+  background-color: var(--error);
+}
+
+.avatar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-weight: 500;
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.avatar.active {
+  border-color: var(--teal);
+}
+
+.avatar .avatar-tooltip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.avatar:hover .avatar-tooltip {
+  opacity: 1;
+}
+
+.control-icon-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  color: var(--accent);
+  border: 1px solid rgba(224, 229, 236, 0.1);
+  transition: var(--transition);
+}
+
+.control-icon-button:hover {
+  background-color: var(--teal);
+  color: var(--secondary);
+}
+
+.control-icon-button.active {
+  background-color: var(--teal);
+  color: var(--secondary);
+}
+
+.control-icon-button.danger {
+  background-color: var(--error);
+  color: white;
+}
+
+.control-icon-button.danger:hover {
+  background-color: #ef4444;
+}

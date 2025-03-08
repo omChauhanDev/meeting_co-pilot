@@ -7,8 +7,8 @@ import Footer from "@/components/Footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Presenter AI - Upload Once, Present Forever",
-  description: "Let AI explain your documents and presentations to clients so you don't have to repeat yourself",
+  title: "Meeting Co-pilot - Upload Once, Present Forever",
+  description: "Let Co-pilot explain your documents and presentations to clients so you don't have to repeat yourself",
   keywords: "AI, presentations, documents, automation, explanation",
 }
 

@@ -32,13 +32,11 @@ export function AgentVideoDisplay({ participantIdentity }: { participantIdentity
       setDebug(prev => `${prev}\nTrack subscribed: ${track.kind} from ${track.participant?.identity}`);
       
       if (track.kind === 'video' && videoRef.current) {
-        // Attach the track to our video element
         track.attach(videoRef.current);
         setDebug(prev => `${prev}\nVideo track attached to element`);
       }
     };
     
-    // Add event listeners for all participants
     participants.forEach(participant => {
       participant.on('trackSubscribed', handleTrackSubscribed);
     });
@@ -62,7 +60,6 @@ export function AgentVideoDisplay({ participantIdentity }: { participantIdentity
       }
     });
     
-    // Cleanup function
     return () => {
       participants.forEach(participant => {
         participant.off('trackSubscribed', handleTrackSubscribed);
@@ -76,15 +73,14 @@ export function AgentVideoDisplay({ participantIdentity }: { participantIdentity
   }, [room]);
   
   return (
-    <div className="w-full max-w-[640px] mx-auto">
-      <div className="rounded-lg overflow-hidden bg-black aspect-video">
-        <video 
-          ref={videoRef}
-          autoPlay 
-          playsInline
-          className="w-full h-full object-cover"
-        />
+    <div className="w-full h-full flex items-center justify-center p-4">
+      <div className="w-full h-full rounded-lg overflow-hidden bg-black relative">
+        <video ref={videoRef} autoPlay playsInline className="w-full h-full object-cover" />
+        <div className="absolute bottom-4 left-4 bg-[rgba(26,41,66,0.7)] px-3 py-1.5 rounded-md text-sm font-medium">
+          Presented by Co-pilot
+        </div>
       </div>
     </div>
   );
 }
+
