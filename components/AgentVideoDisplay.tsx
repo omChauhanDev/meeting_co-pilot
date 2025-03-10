@@ -74,12 +74,12 @@ export function AgentVideoDisplay({ participantIdentity }: { participantIdentity
   
   return (
     <div className="w-full h-full flex items-center justify-center p-4">
-      <div className="w-full h-full rounded-lg overflow-hidden bg-black relative">
-        <video ref={videoRef} autoPlay playsInline className="w-full h-full object-cover" />
-        <div className="absolute bottom-4 left-4 bg-[rgba(26,41,66,0.7)] px-3 py-1.5 rounded-md text-sm font-medium">
+      <div className="w-full h-0 pb-[56.25%] relative rounded-lg overflow-hidden bg-black">
+        <video ref={videoRef} autoPlay playsInline className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute bottom-6 left-6 bg-[rgba(26,41,66,0.7)] px-3 py-1.5 rounded-md text-sm font-medium">
           Presented by Co-pilot
         </div>
-      </div>
+    </div>
     </div>
   );
 }
