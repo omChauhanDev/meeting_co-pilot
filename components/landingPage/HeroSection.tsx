@@ -1,43 +1,32 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, FileUp, Play } from "lucide-react"
-import Image from "next/image"
-import { useRouter } from 'next/navigation'
-import { Dialog, DialogContent, DialogTrigger, DialogClose } from "@/components/ui/dialog"
-import { UploadDoc } from "./UploadDoc"
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, FileUp, Play } from "lucide-react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog";
+import { UploadDoc } from "./UploadDoc";
 
 export default function HeroSection() {
-  const heroRef = useRef<HTMLDivElement>(null)
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const router = useRouter()
-  const [isDialogOpen, setIsDialogOpen] = useState(false)
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const router = useRouter();
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleSeeHowItWorksClick = () => {
-    router.push("/")
-  }
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!heroRef.current) return
-
-      const { clientX, clientY } = e
-      const { left, top, width, height } = heroRef.current.getBoundingClientRect()
-
-      // Calculate normalized mouse position (-1 to 1)
-      const x = ((clientX - left) / width - 0.5) * 2
-      const y = ((clientY - top) / height - 0.5) * 2
-
-      setMousePosition({ x, y })
-    }
-
-    document.addEventListener("mousemove", handleMouseMove)
-    return () => document.removeEventListener("mousemove", handleMouseMove)
-  }, [])
-
+    router.push("/");
+  };
   return (
-    <section ref={heroRef} className="max-h-screen relative pt-32 pb-16 md:pt-26 md:pb-24 overflow-hidden">
+    <section
+      ref={heroRef}
+      className="max-h-screen relative pt-32 pb-16 md:pt-26 md:pb-24 overflow-hidden"
+    >
       {/* Particle Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-30 mix-blend-screen particle-animation" />
@@ -53,25 +42,33 @@ export default function HeroSection() {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-[600px]">
-              Let Co-pilot explain your documents and presentations to clients so you don't have to repeat yourself
+              Let Co-pilot explain your documents and presentations to clients
+              so you don't have to repeat yourself
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
-                  <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white">
+                  <Button
+                    size="lg"
+                    className="bg-secondary hover:bg-secondary/90 text-white"
+                  >
                     <FileUp className="mr-2 h-5 w-5" />
                     Upload Your Document
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="">
                   <div className="flex justify-end">
-                    <DialogClose asChild>
-                    </DialogClose>
+                    <DialogClose asChild></DialogClose>
                   </div>
                   <UploadDoc />
                 </DialogContent>
               </Dialog>
-              <Button size="lg" variant="outline" className="group" onClick={handleSeeHowItWorksClick}>
+              <Button
+                size="lg"
+                variant={"outline"}
+                className="group"
+                onClick={handleSeeHowItWorksClick}
+              >
                 <Play className="mr-2 h-5 w-5" />
                 Start Demo
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -83,9 +80,7 @@ export default function HeroSection() {
             <div
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 ai-avatar-container"
               style={{
-                transform: `translate(-50%, -50%) 
-                           rotateY(${mousePosition.x * 5}deg) 
-                           rotateX(${-mousePosition.y * 5}deg)`,
+                transform: `translate(-50%, -50%) `,
               }}
             >
               <div className="relative w-[220px] h-[300px]">
@@ -107,9 +102,7 @@ export default function HeroSection() {
             <div
               className="absolute right-[10%] top-[15%] z-10 floating-element"
               style={{
-                transform: `translateZ(20px) 
-                           rotateY(${-mousePosition.x * 15}deg) 
-                           rotateX(${mousePosition.y * 10}deg)`,
+                transform: `translateZ(20px) `,
               }}
             >
               <div className="relative">
@@ -127,9 +120,7 @@ export default function HeroSection() {
             <div
               className="absolute left-[5%] bottom-[20%] z-30 floating-element-delayed"
               style={{
-                transform: `translateZ(50px) 
-                           rotateY(${-mousePosition.x * 20}deg) 
-                           rotateX(${mousePosition.y * 15}deg)`,
+                transform: `translateZ(50px) `,
               }}
             >
               <div className="relative">
@@ -147,9 +138,7 @@ export default function HeroSection() {
             <div
               className="absolute left-[15%] top-[25%] z-0 floating-element-reverse"
               style={{
-                transform: `translateZ(-20px) 
-                           rotateY(${-mousePosition.x * 10}deg) 
-                           rotateX(${mousePosition.y * 5}deg)`,
+                transform: `translateZ(-20px) `,
               }}
             >
               <div className="relative">
@@ -166,9 +155,7 @@ export default function HeroSection() {
             <div
               className="absolute right-[15%] bottom-[30%] z-10 floating-element-slow"
               style={{
-                transform: `translateZ(10px) 
-                           rotateY(${-mousePosition.x * 12}deg) 
-                           rotateX(${mousePosition.y * 8}deg)`,
+                transform: `translateZ(10px) `,
               }}
             >
               <div className="relative">
@@ -206,6 +193,5 @@ export default function HeroSection() {
 
       <div className="absolute inset-0 bg-gradient-to-bl from-secondary/20 via-transparent to-accent/20 pointer-events-none" />
     </section>
-  )
+  );
 }
-
