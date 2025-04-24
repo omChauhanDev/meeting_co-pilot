@@ -57,7 +57,7 @@ export default function HeroSection() {
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="">
-                  <div className="flex justify-end">
+                  <div className="flex justify-end cursor-pointer">
                     <DialogClose asChild></DialogClose>
                   </div>
                   <UploadDoc />
@@ -65,8 +65,7 @@ export default function HeroSection() {
               </Dialog>
               <Button
                 size="lg"
-                variant={"outline"}
-                className="group"
+                className="group bg-[#9154f2] hover:bg-[#9154f2]/90 text-white cursor-pointer"
                 onClick={handleSeeHowItWorksClick}
               >
                 <Play className="mr-2 h-5 w-5" />
