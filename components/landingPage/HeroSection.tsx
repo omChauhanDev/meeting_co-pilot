@@ -42,8 +42,8 @@ export default function HeroSection() {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-[600px]">
-              Let Co-pilot explain your documents and presentations to clients
-              so you don't have to repeat yourself
+              Let our Co-pilot present your documents to clients, so you don't
+              have to repeat yourself
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
